@@ -1,6 +1,6 @@
 import "../../pages/Alertas/style.css"
 import React, { useEffect, useState } from "react";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import { useState } from "react";
 
@@ -17,20 +17,28 @@ function Alertas() {
         return;
       }
 
-      const linhas = document.querySelectorAll('#tabela-alertas tbody tr');
+      // const linhas = document.getElementById('tabela-alertas')?.getElementsByTagName('tr');
+      const linhas = document.querySelectorAll('#tabela-alertas tr');
 
-      linhas.forEach((linha, posicao) => {
-        const conteudoDaLinha = linha.innerHTML.toLowerCase();
+      // if( linhas != undefined ){
 
-        if (conteudoDaLinha.includes(expressaoLowerCase)) {
-          setLinhasVisiveis((prev) => ({ ...prev, [posicao]: true }));
-        } else {
-          setLinhasVisiveis((prev) => ({ ...prev, [posicao]: false }));
-        }
-      });
+        linhas.forEach((linha, posicao) => {
+          const conteudoDaLinha = linha.innerHTML.toLowerCase();
+  
+          if (conteudoDaLinha.includes(expressaoLowerCase)) {
+            setLinhasVisiveis((prev) => ({ ...prev, [posicao]: true }));
+            linhas[posicao].style.display = ``
+            
+          } else {
+            setLinhasVisiveis((prev) => ({ ...prev, [posicao]: false }));
+            linhas[posicao].style.display = `none`
+          }
+        });
+      // }
+
     };
 
-    const inputBusca = document.getElementById('input-busca');
+    const inputBusca = document.getElementById('inputBusca');
     inputBusca.addEventListener('keyup', handleKeyUp);
 
     // Remover o evento quando o componente for desmontado
@@ -43,7 +51,7 @@ function Alertas() {
     <>
       <section className="mainCards">
         <div className="cards">
-          <div className="card critico">
+          <div className="card critico" >
             <div className="card-conten">
               <div className="number">50</div>
               <div className="card-name">Críticos</div>
@@ -53,9 +61,11 @@ function Alertas() {
             </div>
           </div>
           <div className="card urgentes">
-            <div className="card-conten">
+          
+           
               <div className="number">30</div>
-              <div className="card-name">Urgentes</div>
+              <div className="card-name">Urgentes <FontAwesomeIcon icon="fa-solid fa-triangle-exclamation" />
+            <div className="card-conten" ></div>
             </div>
             <div className="icon-box">
               <i className="fas fa-chalkboard-teacher" />
@@ -84,7 +94,7 @@ function Alertas() {
    <div className="card card-body mt-5">
     <h1>Gerenciamento de Alertas</h1>
   <input
-    id="input-busca"
+    id="inputBusca"
     type="text"
     className="form-control mt-3 mb-3"
     placeholder="O que você procura?"
