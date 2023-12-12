@@ -48,21 +48,21 @@
 
 
 .cards .critico .number {
-    background-color: #f07c7c;
+    background-color: #ff8a8a;
 }
 
 
 
 .cards .urgentes .number{
-    background-color:#7ab8f6;
+    background-color:#75b9fc;
 }
 
 
 .cards .normais .number {
-    background-color: #ede556;
+    background-color: #f6f66a;
 }
 .cards .concluido .number {
-    background-color: #8df69f;
+    background-color: #78f58d;
 }
 
 * {

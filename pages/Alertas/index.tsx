@@ -104,11 +104,11 @@ function Alertas() {
   <table className="table table-hover table-striped">
     <thead className="table-dark">
       <tr>
-        <th>Nome Alerta</th>
+        <th>Prioridade</th>
         <th>Nível criticidade</th>
         <th>Data</th>
         <th>Status</th>
-        <th>Descrição alerta</th>
+        <th>Descrição</th>
         <th>ID_ERRO</th>
       </tr>
     </thead>
