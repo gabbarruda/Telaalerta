@@ -64,7 +64,7 @@ function Alertas() {
           
            
               <div className="number">30</div>
-              <div className="card-name">Urgentes <FontAwesomeIcon icon="fa-solid fa-triangle-exclamation" />
+              <div className="card-name">Urgentes 
             <div className="card-conten" ></div>
             </div>
             <div className="icon-box">
